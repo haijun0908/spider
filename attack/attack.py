@@ -62,8 +62,6 @@ def detail(title, link):
         checkPath(title)
 
         _curIndex = re.findall("http://juren.feiwan.net/manhua/(\d+).html", _link)[0]
-        if int(_curIndex) > 5:
-            return
 
         with request.urlopen(link) as f:
             _html = etree.HTML(f.read().decode("GBK", errors='replace'))
